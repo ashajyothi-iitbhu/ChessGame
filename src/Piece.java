@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 public class Piece
 {
+	private boolean available;
 	HashMap <String, String> PiecePositionList = new HashMap<String, String>();
 	//HashMap <String, String> Black = new HashMap<String, String>();
 	
@@ -54,6 +55,10 @@ public class Piece
 			case 5: rook(input); break;
 		}
 	}
+	
+	public void setAvailable(boolean available) {
+        this.available = available;
+    }
 	
 	public int checkWhichPiece(String s)
 	{
