@@ -18,6 +18,13 @@ public class ChessBoard {
     public Square getSquare(int x, int y) {
         return squares[x][y];
     }
+    
+    public char[][] calculateFinalState(ArrayList<String> positionInput)
+    {
+    	char[][] boardFinalState = new char[8][8];
+    	
+    	return boardFinalState;
+    }
 
 }
 
