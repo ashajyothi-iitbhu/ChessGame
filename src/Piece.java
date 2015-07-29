@@ -89,5 +89,11 @@ public class Piece
 	{
 		
 	}
+	
+	public void movePiece(String positionToMove)
+	{
+		String[] positions = positionToMove.split((","));
+		
+	}
 }
 

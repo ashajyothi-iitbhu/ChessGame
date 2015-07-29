@@ -40,8 +40,8 @@ public class ChessGame {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> positionsInput = new ArrayList<String> ();
 		positionsInput = parseInput(br);
-		for(String p : positionsInput)
-			System.out.println(p);
+//		for(String p : positionsInput)
+//			System.out.println(p);
 		
 		ChessBoard boardObject = new ChessBoard();
 		
