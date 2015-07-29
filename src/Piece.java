@@ -93,7 +93,7 @@ public class Piece
 	public void movePiece(String positionToMove)
 	{
 		String[] positions = positionToMove.split((","));
-		
+		System.out.println(positions[0]+" "+positions[1]+" " +positions[2]);
 	}
 }
 
