@@ -84,7 +84,7 @@ public class PiecesManip
 	}
 	
 
-	public int returnValidNight(int x1, int x2, int x3, int y1, int y2, int y3)
+	public int whichNight(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		if((x1-1==x3 && y1+2 == y3) || (x1-1==x3 && y1-2 == y3) || 
 				(x1+1==x3 && y1+2 == y3) || (x1+1==x3 && y1-2 == y3) || 
