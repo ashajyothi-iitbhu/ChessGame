@@ -4,25 +4,52 @@ import java.lang.*;
 import java.io.*;
 
 public class ChessBoard {
-    private Square[][] squares = new Square[8][8];
-
-    public ChessBoard() {
-        super();
-        for(int i=0; i<squares.length; i++){
-            for(int j=0; j<squares.length; j++){
-                this.squares[i][j] = new Square(i, j);
-            }
-        }
-    }
-
-    public Square getSquare(int x, int y) {
-        return squares[x][y];
-    }
+	private String[][] board = new String[8][8];
+	
+	public ChessBoard()
+	{
+		board[0][0] = "R";
+		board[0][1] = "N";
+		board[0][2] = "B";
+		board[0][3] = "K";
+		board[0][4] = "Q";
+		board[0][5] = "B";
+		board[0][6] = "N";
+		board[0][7] = "R";
+		board[7][0] = "r";
+		board[7][1] = "n";
+		board[7][2] = "b";
+		board[7][3] = "k";
+		board[7][4] = "q";
+		board[7][5] = "b";
+		board[7][6] = "n";
+		board[7][7] = "r";
+		for(int i=2;i<6;i++)
+		{
+			for(int j=0; j<8; j++)
+				board[i][j] = "e";
+		}
+		
+		for(int i=0; i<8; i++)
+		{
+			board[1][i] = "P";
+			board[6][i] = "p";
+		}
+	}
     
-    public char[][] calculateFinalState(ArrayList<String> positionInput)
+	public void setSquareState(String piece, int x, int y)
+	{
+		board[x][y] = piece;
+	}
+	public String[][] getBoardState()
+	{
+		return board;
+	}
+    
+    public String[][] calculateFinalState(ArrayList<String> positionInput)
     {
     	Piece piece = new Piece();
-    	char[][] boardFinalState = new char[8][8];
+    	String[][] boardFinalState = new String[8][8];
     	for(int i=0; i<positionInput.size(); i++)
     	{
     		String[] positions;
@@ -48,12 +75,37 @@ public class ChessBoard {
 //    			System.out.println(blackPositionToMove + " " + whitePositionToMove);
     			piece.movePiece(blackPositionToMove);
     			piece.movePiece(whitePositionToMove);
+    			updateBoard();
     		}
     		
     	}
-    	return boardFinalState;
+    	return board;
     }
-    
+
+    public void updateBoard()
+    {
+    	for(int i = 0; i < 8; i++)
+    	{
+    		System.out.println("Column number "+Pieces.P[i].col);
+    		board[Pieces.P[i].col][Pieces.P[i].row] = "P";
+    		board[Pieces.p[i].col][Pieces.p[i].row] = "p";  		
+    	}
+    	for(int i=0; i<2; i++)
+    	{
+    		board[Pieces.N[i].col][Pieces.N[i].row] = "N";
+    		board[Pieces.n[i].col][Pieces.n[i].row] = "n";
+    		board[Pieces.B[i].col][Pieces.B[i].row] = "B";
+    		board[Pieces.b[i].col][Pieces.b[i].row] = "b";
+    		board[Pieces.R[i].col][Pieces.R[i].row] = "R";
+    		board[Pieces.r[i].col][Pieces.r[i].row] = "r";
+    	}
+    	board[Pieces.K.col][Pieces.K.row] = "K";
+		board[Pieces.k.col][Pieces.k.row] = "k";
+		board[Pieces.Q.col][Pieces.Q.row] = "Q";
+		board[Pieces.q.col][Pieces.q.row] = "q";
+		
+    }
+   
     public static String getEquivalentBoardPosition(String position)
     {
     	String equivalentPosition = "";

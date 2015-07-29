@@ -45,7 +45,12 @@ public class ChessGame {
 		
 		ChessBoard boardObject = new ChessBoard();
 		
-		char[][] boardFinalState = boardObject.calculateFinalState(positionsInput);
-		
+		String[][] boardFinalState = boardObject.calculateFinalState(positionsInput);
+		for(int i=0;i<8;i++)
+		{
+			for(int j=0;j<8;j++)
+				System.out.print(boardFinalState[i][j]);
+			System.out.println();
+		}	
 	}
 }

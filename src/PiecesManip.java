@@ -3,6 +3,12 @@ public class PiecesManip
 {	
 	Pieces pieces = new Pieces();
 	
+	public void movePiece(String positionToMove)
+	{
+		String[] pcr = new String[3];
+		pcr = positionToMove.split(",");
+		updatePiecePos(pcr[0].charAt(0), Integer.parseInt(pcr[1]), Integer.parseInt(pcr[2]));
+	}
 	public void updatePiecePos(char pieceType, int col, int row)
 	{
 		int i = findPieceType(pieceType);

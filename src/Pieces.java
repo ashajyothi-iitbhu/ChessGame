@@ -106,41 +106,41 @@ public class Pieces
 	
 	Pieces()
 	{	
-		P[0] = new Pawn("P1",1,2);
-		P[1] = new Pawn("P2",2,2);
-		P[2] = new Pawn("P3",3,2);
-		P[3] = new Pawn("P4",4,2);
-		P[4] = new Pawn("P5",5,2);
-		P[5] = new Pawn("P6",6,2);
-		P[6] = new Pawn("P7",7,2);
-		P[7] = new Pawn("P8",8,2);
+		P[0] = new Pawn("P1",0,1);
+		P[1] = new Pawn("P2",1,1);
+		P[2] = new Pawn("P3",2,1);
+		P[3] = new Pawn("P4",3,1);
+		P[4] = new Pawn("P5",4,1);
+		P[5] = new Pawn("P6",5,1);
+		P[6] = new Pawn("P7",6,1);
+		P[7] = new Pawn("P8",7,1);
 		
-		p[0] = new Pawn("p1",1,2);
-		p[1] = new Pawn("p2",2,2);
-		p[2] = new Pawn("p3",3,2);
-		p[3] = new Pawn("p4",4,2);
-		p[4] = new Pawn("p5",5,2);
-		p[5] = new Pawn("p6",6,2);
-		p[6] = new Pawn("p7",7,2);
-		p[7] = new Pawn("p8",8,2);
+		p[0] = new Pawn("p1",0,6);
+		p[1] = new Pawn("p2",1,6);
+		p[2] = new Pawn("p3",2,6);
+		p[3] = new Pawn("p4",3,6);
+		p[4] = new Pawn("p5",4,6);
+		p[5] = new Pawn("p6",5,6);
+		p[6] = new Pawn("p7",6,6);
+		p[7] = new Pawn("p8",7,6);
 	
-		R[0] = new Rook("R1",1,1);
-		N[0] = new Night("N1",2,1);
-		B[0] = new Bishop("B1",3,1);
-		Q = new Queen("Q",4,1);
-		K = new King("K",5,1);
-		B[1] = new Bishop("B2",6,1);
-		N[1] = new Night("N2",7,1);
-		R[1] = new Rook("R2",8,1);
+		R[0] = new Rook("R1",0,0);
+		N[0] = new Night("N1",1,0);
+		B[0] = new Bishop("B1",2,0);
+		Q = new Queen("Q",3,0);
+		K = new King("K",4,0);
+		B[1] = new Bishop("B2",5,0);
+		N[1] = new Night("N2",6,0);
+		R[1] = new Rook("R2",7,0);
 		
-		r[0] = new Rook("r1",1,1);
-		n[0] = new Night("n1",2,1);
-		b[0] = new Bishop("b1",3,1);
-		q = new Queen("q",4,1);
-		k = new King("k",5,1);
-		b[1] = new Bishop("b2",6,1);
-		n[1] = new Night("n2",7,1);
-		r[1] = new Rook("r2",8,1);
+		r[0] = new Rook("r1",0,7);
+		n[0] = new Night("n1",1,7);
+		b[0] = new Bishop("b1",2,7);
+		q = new Queen("q",3,7);
+		k = new King("k",4,7);
+		b[1] = new Bishop("b2",5,7);
+		n[1] = new Night("n2",6,7);
+		r[1] = new Rook("r2",7,7);
 	}
 	
 	}
