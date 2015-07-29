@@ -25,6 +25,10 @@ public class ChessBoard {
     	
     	return boardFinalState;
     }
-
+    
+    public static String getEquivalentBoardPosition(String position)
+    {
+    	
+    }
 }
 
