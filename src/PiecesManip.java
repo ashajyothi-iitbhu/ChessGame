@@ -63,6 +63,7 @@ public class PiecesManip
 		}
 	}
 	
+<<<<<<< HEAD
 	public void updateBishop(char pieceType, int col, int row)
 	{
 		if(pieceType == 'B')
@@ -77,8 +78,27 @@ public class PiecesManip
 			Pieces.b[index].col = col;
 			Pieces.b[index].col = col;
 		}
-	}
+=======
+
+	public void whichBishop(int x1, int x2, int x3, int y1, int y2, int y3)
+	{
+	int returnVal;
+	if(Math.abs(x-x1) == Math.abs(y-y1))
+		{
+		returnVal = 1;
+		
+		}
+	else
+		{
+		returnVal = 2;
+		}
 	
+	cout<< returnVal;
+>>>>>>> 35fe3d546535ae370865062a2db05890c0e2d727
+	}
+
+	
+<<<<<<< HEAD
 	public void updateRook(char pieceType, int col, int row)
 	{
 		if(pieceType == 'R')
@@ -93,8 +113,24 @@ public class PiecesManip
 			Pieces.r[index].col = col;
 			Pieces.r[index].col = col;
 		}
+=======
+	public void whichRook(int x1, int x2, int x3, int y1, int y2, int y)
+	{
+	int returnVal;
+	if((Math.abs(x-x1) == 0 ||)( Math.abs(y-y1) == 0))
+		{
+		returnVal = 1;
+		}
+	else
+		{
+		returnVal = 2;
+		}
+	cout<< returnVal;
+>>>>>>> 35fe3d546535ae370865062a2db05890c0e2d727
 	}
+	
 
+<<<<<<< HEAD
 	int whichRook(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		if((Math.abs(x3-x1) == 0) || ( Math.abs(y3-y1) == 0)) return 1;
@@ -107,6 +143,8 @@ public class PiecesManip
 		return 2;
 	}
 	
+=======
+>>>>>>> 35fe3d546535ae370865062a2db05890c0e2d727
 	public int whichNight(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		if((x1-1==x3 && y1+2 == y3) || (x1-1==x3 && y1-2 == y3) || 

@@ -115,14 +115,14 @@ public class Pieces
 		P[6] = new Pawn("P7",7,2);
 		P[7] = new Pawn("P8",8,2);
 		
-		p[0] = new Pawn("P1",1,2);
-		p[1] = new Pawn("P2",2,2);
-		p[2] = new Pawn("P3",3,2);
-		p[3] = new Pawn("P4",4,2);
-		p[4] = new Pawn("P5",5,2);
-		p[5] = new Pawn("P6",6,2);
-		p[6] = new Pawn("P7",7,2);
-		p[7] = new Pawn("P8",8,2);
+		p[0] = new Pawn("p1",1,2);
+		p[1] = new Pawn("p2",2,2);
+		p[2] = new Pawn("p3",3,2);
+		p[3] = new Pawn("p4",4,2);
+		p[4] = new Pawn("p5",5,2);
+		p[5] = new Pawn("p6",6,2);
+		p[6] = new Pawn("p7",7,2);
+		p[7] = new Pawn("p8",8,2);
 	
 		R[0] = new Rook("R1",1,1);
 		N[0] = new Night("N1",2,1);
