@@ -10,8 +10,10 @@ P P P P P P P P
 - - - - - - - -
 - - - - - - - -
 - - - - - - - -
-P P P P P P P P
-R N B Q K B N R
+p p p p p p p p
+r n b q k b n r
+
+The uppercase letters denote the white pieces, while the lowercase letters denote the black pieces on the Chess Board.
 
 The notations :
 +     check
