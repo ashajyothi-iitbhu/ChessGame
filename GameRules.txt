@@ -13,4 +13,9 @@ P P P P P P P P
 P P P P P P P P
 R N B Q K B N R
 
-
+The notations :
++     check
+=     queening
+O-O   Kingside castling
+O-O-O Queenside castling
+x     Cut/Capture
