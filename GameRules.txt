@@ -1,3 +1,16 @@
 The chessboard is divided into ranks (numbers) and files (letters). There are eight of each, and each is comprised of
 eight squares of equal size.
 The numbers 1 to 8 indicate ranks, and the letters a to g indicate files.
+
+The initial state of the Chess biard is assumed to be :
+
+R N B Q K B N R
+P P P P P P P P
+- - - - - - - -
+- - - - - - - -
+- - - - - - - -
+- - - - - - - -
+P P P P P P P P
+R N B Q K B N R
+
+
