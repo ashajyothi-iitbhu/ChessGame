@@ -2,7 +2,8 @@
 public class PiecesManip 
 {	
 	Pieces pieces = new Pieces();
-	public void findMovedPiece(char pieceType, int col, int row)
+	
+	public void updatePiecePos(char pieceType, int col, int row)
 	{
 		int i = findPieceType(pieceType);
 		switch(i)
@@ -11,6 +12,8 @@ public class PiecesManip
 			case 2: updateBishop(pieceType, col,row); break;
 			case 3: updateNight(pieceType, col,row); break;
 			case 4: updateRook(pieceType, col,row); break;
+			case 5: updateKing(pieceType, col, row); break;
+			case 6: updateQueen(pieceType, col, row); break;
 		}
 	}
 	
@@ -20,6 +23,8 @@ public class PiecesManip
 		else if (pieceType == 'b' || pieceType == 'B') return 2;
 		else if (pieceType == 'n' || pieceType == 'N') return 3;
 		else if (pieceType == 'r' || pieceType == 'R') return 4;
+		else if (pieceType == 'k' || pieceType == 'K') return 5;
+		else if (pieceType == 'q' || pieceType == 'Q') return 6;
 		else return 0;
 	}
 	
@@ -31,7 +36,7 @@ public class PiecesManip
 			{
 				if(pieces.P[i].col == col)
 				{
-					pieces.P[i].row++;
+					pieces.P[i].row = row;
 				}
 			}
 		}
@@ -41,9 +46,37 @@ public class PiecesManip
 			{
 				if(pieces.p[i].col == col)
 				{
-					pieces.p[i].row++;
+					pieces.p[i].row = row;
 				}
 			}
+		}
+	}
+	
+	public void updateKing(char pieceType, int col, int row)
+	{
+		if(pieceType == 'K')
+		{
+			Pieces.K.col = col;
+			Pieces.K.row = row;
+		}
+		else
+		{
+			Pieces.k.col = col;
+			Pieces.k.row = row;
+		}
+	}
+	
+	public void updateQueen(char pieceType, int col, int row)
+	{
+		if(pieceType == 'Q')
+		{
+			Pieces.Q.col = col;
+			Pieces.Q.row = row;
+		}
+		else
+		{
+			Pieces.q.col = col;
+			Pieces.q.row = row;
 		}
 	}
 	
@@ -63,7 +96,6 @@ public class PiecesManip
 		}
 	}
 	
-<<<<<<< HEAD
 	public void updateBishop(char pieceType, int col, int row)
 	{
 		if(pieceType == 'B')
@@ -78,27 +110,8 @@ public class PiecesManip
 			Pieces.b[index].col = col;
 			Pieces.b[index].col = col;
 		}
-=======
-
-	public void whichBishop(int x1, int x2, int x3, int y1, int y2, int y3)
-	{
-	int returnVal;
-	if(Math.abs(x-x1) == Math.abs(y-y1))
-		{
-		returnVal = 1;
-		
-		}
-	else
-		{
-		returnVal = 2;
-		}
-	
-	cout<< returnVal;
->>>>>>> 35fe3d546535ae370865062a2db05890c0e2d727
 	}
-
 	
-<<<<<<< HEAD
 	public void updateRook(char pieceType, int col, int row)
 	{
 		if(pieceType == 'R')
@@ -113,24 +126,8 @@ public class PiecesManip
 			Pieces.r[index].col = col;
 			Pieces.r[index].col = col;
 		}
-=======
-	public void whichRook(int x1, int x2, int x3, int y1, int y2, int y)
-	{
-	int returnVal;
-	if((Math.abs(x-x1) == 0 ||)( Math.abs(y-y1) == 0))
-		{
-		returnVal = 1;
-		}
-	else
-		{
-		returnVal = 2;
-		}
-	cout<< returnVal;
->>>>>>> 35fe3d546535ae370865062a2db05890c0e2d727
 	}
-	
 
-<<<<<<< HEAD
 	int whichRook(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		if((Math.abs(x3-x1) == 0) || ( Math.abs(y3-y1) == 0)) return 1;
@@ -143,8 +140,6 @@ public class PiecesManip
 		return 2;
 	}
 	
-=======
->>>>>>> 35fe3d546535ae370865062a2db05890c0e2d727
 	public int whichNight(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		if((x1-1==x3 && y1+2 == y3) || (x1-1==x3 && y1-2 == y3) || 
@@ -163,7 +158,7 @@ public class PiecesManip
 		{
 			System.out.println(pm.pieces.N[i].name +" "+ pm.pieces.N[i].col +" "+ pm.pieces.N[i].row);
 		}
-		pm.findMovedPiece('N',3,3);
+		pm.updatePiecePos('N',3,3);
 		System.out.println("After move");
 		for(int i = 0; i < 2; i++)
 		{
