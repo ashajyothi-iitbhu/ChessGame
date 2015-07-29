@@ -4,19 +4,20 @@ import java.lang.*;
 import java.io.*;
 
 public class ChessBoard {
-	private String initialState[] = new String[8];
-	string position;
+    private Square[][] squares = new Square[8][8];
 
-	public ChessBoard( {
-		String[8] = {"RNBQKBNR","PPPPPPPP", "--------", "--------", "--------", "--------", "pppppppp", "rnbqkbnr"};
-		this.position=" ";
-		      }
+    public ChessBoard() {
+        super();
+        for(int i=0; i<squares.length; i++){
+            for(int j=0; j<squares.length; j++){
+                this.squares[i][j] = new Square(i, j);
+            }
+        }
+    }
 
+    public Square getSquare(int x, int y) {
+        return squares[x][y];
+    }
 
-	public getPosition(){
-	return position;
-		}
-		
 }
-
 
