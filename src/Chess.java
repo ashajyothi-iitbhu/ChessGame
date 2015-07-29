@@ -2,44 +2,50 @@ import java.util.HashMap;
 
 public class Chess
 {
-	HashMap <String, String> Piece = new HashMap<String, String>();
+	HashMap <String, Square> Piece = new HashMap<String, Square>();
 	//HashMap <String, String> Black = new HashMap<String, String>();
 	
 	Chess()
 	{
-		Piece.put("R1", "A1");
-		Piece.put("N1", "B1");
-		Piece.put("B1", "C1");
-		Piece.put("Q", "D1");
-		Piece.put("K", "E1");
-		Piece.put("B2", "F1");
-		Piece.put("N2", "G1");
-		Piece.put("R2", "H1");
-		Piece.put("P1", "A2");
-		Piece.put("P2", "B2");
-		Piece.put("P3", "C2");
-		Piece.put("P4", "D2");
-		Piece.put("P5", "E2");
-		Piece.put("P6", "F2");
-		Piece.put("P7", "G2");
-		Piece.put("P8", "H2");
+		Square s[] = new Square[32];
 		
-		Piece.put("r1", "A8");
-		Piece.put("n1", "B8");
-		Piece.put("b1", "C8");
-		Piece.put("q", "D8");
-		Piece.put("k", "E8");
-		Piece.put("b2", "F8");
-		Piece.put("n2", "G8");
-		Piece.put("r2", "H8");
-		Piece.put("p1", "A7");
-		Piece.put("p2", "B7");
-		Piece.put("p3", "C7");
-		Piece.put("p4", "D7");
-		Piece.put("p5", "E7");
-		Piece.put("p6", "F7");
-		Piece.put("p7", "G7");
-		Piece.put("p8", "H7");
+		Piece.put("R1", s[0] = new Square(1,1));
+		Piece.put("N1", s[1] = new Square(2,1));
+		Piece.put("B1", s[2] = new Square(3,1));
+		Piece.put("Q", s[3] = new Square(4,1));
+		Piece.put("K", s[4] = new Square(5,1));
+		Piece.put("B2", s[5] = new Square(6,1));
+		Piece.put("N2", s[6] = new Square(7,1));
+		Piece.put("R2", s[7] = new Square(8,1));
+		
+		Piece.put("P1", s[8] = new Square(1,2));
+		Piece.put("P2", s[9] = new Square(2,2));
+		Piece.put("P3", s[10] = new Square(3,2));
+		Piece.put("P4", s[11] = new Square(4,2));
+		Piece.put("P5", s[12] = new Square(5,2));
+		Piece.put("P6", s[13] = new Square(6,2));
+		Piece.put("P7", s[14] = new Square(7,2));
+		Piece.put("P8", s[15] = new Square(8,2));
+		
+		Piece.put("r1", s[16] = new Square(1,8));
+		Piece.put("n1", s[17] = new Square(2,8));
+		Piece.put("b1", s[18] = new Square(3,8));
+		Piece.put("q", s[19] = new Square(4,8));
+		Piece.put("k", s[20] = new Square(5,8));
+		Piece.put("b2", s[21] = new Square(6,8));
+		Piece.put("n2", s[22] = new Square(7,8));
+		Piece.put("r2", s[23] = new Square(8,8));
+		
+		Piece.put("p1", s[24] = new Square(1,7));
+		Piece.put("p2", s[25] = new Square(2,7));
+		Piece.put("p3", s[26] = new Square(3,7));
+		Piece.put("p4", s[27] = new Square(4,7));
+		Piece.put("p5", s[28] = new Square(5,7));
+		Piece.put("p6", s[29] = new Square(6,7));
+		Piece.put("p7", s[30] = new Square(7,7));
+		Piece.put("p8", s[31] = new Square(8,7));
+		
+		
 	}
 	
 	public void findNextPosition()
