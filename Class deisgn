@@ -1,0 +1,13 @@
+class Board
+{
+	int b[8][8];
+	updateBoard();
+	displayBoard();
+}
+
+class Chess
+{
+	parsePgn();
+	findNextPosition();
+	//call updateBoard;
+}
