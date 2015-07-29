@@ -1,21 +1,16 @@
-import java.util.ArrayList;
-
 
 public class PiecesManip 
 {	
 	Pieces pieces = new Pieces();
 	public void findMovedPiece(char pieceType, int col, int row)
 	{
-		pieceType = 'P';
-		col = 5;
-		row = 5;
 		int i = findPieceType(pieceType);
 		switch(i)
 		{
-			case 1: updatePawnPos(col,row); break;
-			case 2: whichBishop(col,row); break;
-			case 3: whichNight(col,row); break;
-			case 4: whichRook(col,row); break;
+			case 1: updatePawn(pieceType, col,row); break;
+			case 2: updateBishop(pieceType, col,row); break;
+			case 3: updateNight(pieceType, col,row); break;
+			case 4: updateRook(pieceType, col,row); break;
 		}
 	}
 	
@@ -28,40 +23,91 @@ public class PiecesManip
 		else return 0;
 	}
 	
-	public void updatePawnPos(int col, int row)
+	public void updatePawn(char pieceType, int col, int row)
 	{
-		for( int i = 0; i < 8; i++)
+		if(pieceType == 'P')
 		{
-			if(pieces.P[i].col == col)
+			for( int i = 0; i < 8; i++)
 			{
-				pieces.P[i].row++;
+				if(pieces.P[i].col == col)
+				{
+					pieces.P[i].row++;
+				}
+			}
+		}
+		else
+		{
+			for( int i = 0; i < 8; i++)
+			{
+				if(pieces.p[i].col == col)
+				{
+					pieces.p[i].row++;
+				}
 			}
 		}
 	}
 	
-	public void whichNight(int col, int row)
+	public void updateNight(char pieceType, int col, int row)
 	{
-		//generateNightPos();
-		for(int i=0; i<2; i++)
+		if(pieceType == 'N')
 		{
-			if (Pieces.N[i].col == col && Pieces.N[i].row == row)
-			{
-				
-			}
+			int index = whichNight(Pieces.N[0].col, Pieces.N[1].col, col, Pieces.N[0].row, Pieces.N[1].row, row );
+			Pieces.N[index-1].col = col;
+			Pieces.N[index-1].row = row;
+		}
+		else
+		{
+			int index = whichNight(Pieces.n[0].col, Pieces.n[1].col, col, Pieces.n[0].row, Pieces.n[1].row, row );
+			Pieces.n[index-1].col = col;
+			Pieces.n[index-1].row = row;
 		}
 	}
 	
-	public void whichBishop(int col, int row)
+	public void updateBishop(char pieceType, int col, int row)
 	{
-		
+		if(pieceType == 'B')
+		{
+			int index = whichBishop(Pieces.B[0].col, Pieces.B[1].col, col, Pieces.B[0].row, Pieces.B[1].row, row );
+			Pieces.B[index].col = col;
+			Pieces.B[index].col = col;
+		}
+		else
+		{
+			int index = whichBishop(Pieces.b[0].col, Pieces.b[1].col, col, Pieces.b[0].row, Pieces.b[1].row, row );
+			Pieces.b[index].col = col;
+			Pieces.b[index].col = col;
+		}
 	}
 	
-	public void whichRook(int col, int row)
+	public void updateRook(char pieceType, int col, int row)
 	{
-		
+		if(pieceType == 'R')
+		{
+			int index = whichBishop(Pieces.R[0].col, Pieces.R[1].col, col, Pieces.R[0].row, Pieces.R[1].row, row );
+			Pieces.R[index].col = col;
+			Pieces.R[index].col = col;
+		}
+		else
+		{
+			int index = whichBishop(Pieces.r[0].col, Pieces.r[1].col, col, Pieces.r[0].row, Pieces.r[1].row, row );
+			Pieces.r[index].col = col;
+			Pieces.r[index].col = col;
+		}
 	}
 
-	public int returnValidNight(int x1, int x2, int x3, int y1, int y2, int y3)
+	int whichRook(int x1, int x2, int x3, int y1, int y2, int y3)
+	{
+		if((Math.abs(x3-x1) == 0) || ( Math.abs(y3-y1) == 0)) return 1;
+		return 2;
+	}
+	
+	int whichBishop(int x1, int x2, int x3, int y1, int y2, int y3)
+	{
+		if(Math.abs(x3-x1) == Math.abs(y3-y1)) return 1;
+		return 2;
+	}
+	
+	public int whichNight(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		if((x1-1==x3 && y1+2 == y3) || (x1-1==x3 && y1-2 == y3) || 
 				(x1+1==x3 && y1+2 == y3) || (x1+1==x3 && y1-2 == y3) || 
@@ -71,18 +117,19 @@ public class PiecesManip
 		else
 			return 2;
 	}
+	
 	public static void main(String args[]) 
 	{
 		PiecesManip pm = new PiecesManip();
-		for(int i = 0; i < 8; i++)
+		for(int i = 0; i < 2; i++)
 		{
-			System.out.println(pm.pieces.P[i].name +" "+ pm.pieces.P[i].col +" "+ pm.pieces.P[i].row);
+			System.out.println(pm.pieces.N[i].name +" "+ pm.pieces.N[i].col +" "+ pm.pieces.N[i].row);
 		}
-		pm.findMovedPiece('P',5,5);
+		pm.findMovedPiece('N',3,3);
 		System.out.println("After move");
-		for(int i = 0; i < 8; i++)
+		for(int i = 0; i < 2; i++)
 		{
-			System.out.println(pm.pieces.P[i].name +" "+ pm.pieces.P[i].col +" "+ pm.pieces.P[i].row);
+			System.out.println(pm.pieces.N[i].name +" "+ pm.pieces.N[i].col +" "+ pm.pieces.N[i].row);
 		}
 	}
 
