@@ -1,45 +1,45 @@
 import java.util.HashMap;
 
-public class Chess
+public class Piece
 {
-	HashMap <String, String> Piece = new HashMap<String, String>();
+	HashMap <String, String> PiecePositionList = new HashMap<String, String>();
 	//HashMap <String, String> Black = new HashMap<String, String>();
 	
-	Chess()
+	Piece()
 	{
-		Piece.put("R1", "A1");
-		Piece.put("N1", "B1");
-		Piece.put("B1", "C1");
-		Piece.put("Q", "D1");
-		Piece.put("K", "E1");
-		Piece.put("B2", "F1");
-		Piece.put("N2", "G1");
-		Piece.put("R2", "H1");
-		Piece.put("P1", "A2");
-		Piece.put("P2", "B2");
-		Piece.put("P3", "C2");
-		Piece.put("P4", "D2");
-		Piece.put("P5", "E2");
-		Piece.put("P6", "F2");
-		Piece.put("P7", "G2");
-		Piece.put("P8", "H2");
+		PiecePositionList.put("R1", "A1");
+		PiecePositionList.put("N1", "B1");
+		PiecePositionList.put("B1", "C1");
+		PiecePositionList.put("Q", "D1");
+		PiecePositionList.put("K", "E1");
+		PiecePositionList.put("B2", "F1");
+		PiecePositionList.put("N2", "G1");
+		PiecePositionList.put("R2", "H1");
+		PiecePositionList.put("P1", "A2");
+		PiecePositionList.put("P2", "B2");
+		PiecePositionList.put("P3", "C2");
+		PiecePositionList.put("P4", "D2");
+		PiecePositionList.put("P5", "E2");
+		PiecePositionList.put("P6", "F2");
+		PiecePositionList.put("P7", "G2");
+		PiecePositionList.put("P8", "H2");
 		
-		Piece.put("r1", "A8");
-		Piece.put("n1", "B8");
-		Piece.put("b1", "C8");
-		Piece.put("q", "D8");
-		Piece.put("k", "E8");
-		Piece.put("b2", "F8");
-		Piece.put("n2", "G8");
-		Piece.put("r2", "H8");
-		Piece.put("p1", "A7");
-		Piece.put("p2", "B7");
-		Piece.put("p3", "C7");
-		Piece.put("p4", "D7");
-		Piece.put("p5", "E7");
-		Piece.put("p6", "F7");
-		Piece.put("p7", "G7");
-		Piece.put("p8", "H7");
+		PiecePositionList.put("r1", "A8");
+		PiecePositionList.put("n1", "B8");
+		PiecePositionList.put("b1", "C8");
+		PiecePositionList.put("q", "D8");
+		PiecePositionList.put("k", "E8");
+		PiecePositionList.put("b2", "F8");
+		PiecePositionList.put("n2", "G8");
+		PiecePositionList.put("r2", "H8");
+		PiecePositionList.put("p1", "A7");
+		PiecePositionList.put("p2", "B7");
+		PiecePositionList.put("p3", "C7");
+		PiecePositionList.put("p4", "D7");
+		PiecePositionList.put("p5", "E7");
+		PiecePositionList.put("p6", "F7");
+		PiecePositionList.put("p7", "G7");
+		PiecePositionList.put("p8", "H7");
 	}
 	
 	public void findNextPosition()
