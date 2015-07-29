@@ -33,6 +33,7 @@ public class ChessGame {
 		
 		return parsedInput;
 	}
+	
 	public static void main(String[] args) throws IOException
 	{
 		File file = new File("C:/Users/test/Downloads/Bootcamp/Programs/Akopian.pgn");
