@@ -51,15 +51,38 @@ public class PiecesManip
 		}
 	}
 	
-	public void whichBishop(int col, int row)
+
+	public void whichBishop(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
+	int returnVal;
+	if(Math.abs(x-x1) == Math.abs(y-y1))
+		{
+		returnVal = 1;
 		
+		}
+	else
+		{
+		returnVal = 2;
+		}
+	
+	cout<< returnVal;
+	}
+
+	
+	public void whichRook(int x1, int x2, int x3, int y1, int y2, int y)
+	{
+	int returnVal;
+	if((Math.abs(x-x1) == 0 ||)( Math.abs(y-y1) == 0))
+		{
+		returnVal = 1;
+		}
+	else
+		{
+		returnVal = 2;
+		}
+	cout<< returnVal;
 	}
 	
-	public void whichRook(int col, int row)
-	{
-		
-	}
 
 	public int returnValidNight(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
