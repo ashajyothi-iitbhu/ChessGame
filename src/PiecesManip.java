@@ -1,17 +1,30 @@
 
 public class PiecesManip 
 {	
-	Pieces pieces = new Pieces();
+	Pieces pieces;
+	PiecesManip()
+	{
+		
+	}
+	PiecesManip(Pieces piecesObj)
+	{
+		pieces = piecesObj;
+	}
 	
 	public void movePiece(String positionToMove)
 	{
 		String[] pcr = new String[3];
 		pcr = positionToMove.split(",");
-		updatePiecePos(pcr[0].charAt(0), Integer.parseInt(pcr[1]), Integer.parseInt(pcr[2]));
+		char a =pcr[0].charAt(0);
+		int a1 = Integer.parseInt(pcr[1]);
+		int b = Integer.parseInt(pcr[2]);
+		updatePiecePos(a, a1-1, b-1);
 	}
+	
 	public void updatePiecePos(char pieceType, int col, int row)
 	{
 		int i = findPieceType(pieceType);
+		System.out.println(i);
 		switch(i)
 		{
 			case 1: updatePawn(pieceType, col,row); break;
@@ -36,6 +49,7 @@ public class PiecesManip
 	
 	public void updatePawn(char pieceType, int col, int row)
 	{
+		System.out.println(pieceType+" "+col+" "+row);
 		if(pieceType == 'P')
 		{
 			for( int i = 0; i < 8; i++)
@@ -43,6 +57,7 @@ public class PiecesManip
 				if(pieces.P[i].col == col)
 				{
 					pieces.P[i].row = row;
+					pieces.P[i].col = col;
 				}
 			}
 		}
@@ -53,6 +68,7 @@ public class PiecesManip
 				if(pieces.p[i].col == col)
 				{
 					pieces.p[i].row = row;
+					pieces.p[i].col = col;
 				}
 			}
 		}
@@ -62,13 +78,13 @@ public class PiecesManip
 	{
 		if(pieceType == 'K')
 		{
-			Pieces.K.col = col;
-			Pieces.K.row = row;
+			pieces.K.col = col;
+			pieces.K.row = row;
 		}
 		else
 		{
-			Pieces.k.col = col;
-			Pieces.k.row = row;
+			pieces.k.col = col;
+			pieces.k.row = row;
 		}
 	}
 	
@@ -76,13 +92,13 @@ public class PiecesManip
 	{
 		if(pieceType == 'Q')
 		{
-			Pieces.Q.col = col;
-			Pieces.Q.row = row;
+			pieces.Q.col = col;
+			pieces.Q.row = row;
 		}
 		else
 		{
-			Pieces.q.col = col;
-			Pieces.q.row = row;
+			pieces.q.col = col;
+			pieces.q.row = row;
 		}
 	}
 	
@@ -90,15 +106,15 @@ public class PiecesManip
 	{
 		if(pieceType == 'N')
 		{
-			int index = whichNight(Pieces.N[0].col, Pieces.N[1].col, col, Pieces.N[0].row, Pieces.N[1].row, row );
-			Pieces.N[index-1].col = col;
-			Pieces.N[index-1].row = row;
+			int index = whichNight(pieces.N[0].col, pieces.N[1].col, col, pieces.N[0].row, pieces.N[1].row, row );
+			pieces.N[index-1].col = col;
+			pieces.N[index-1].row = row;
 		}
 		else
 		{
-			int index = whichNight(Pieces.n[0].col, Pieces.n[1].col, col, Pieces.n[0].row, Pieces.n[1].row, row );
-			Pieces.n[index-1].col = col;
-			Pieces.n[index-1].row = row;
+			int index = whichNight(pieces.n[0].col, pieces.n[1].col, col, pieces.n[0].row, pieces.n[1].row, row );
+			pieces.n[index-1].col = col;
+			pieces.n[index-1].row = row;
 		}
 	}
 	
@@ -106,15 +122,15 @@ public class PiecesManip
 	{
 		if(pieceType == 'B')
 		{
-			int index = whichBishop(Pieces.B[0].col, Pieces.B[1].col, col, Pieces.B[0].row, Pieces.B[1].row, row );
-			Pieces.B[index].col = col;
-			Pieces.B[index].col = col;
+			int index = whichBishop(pieces.B[0].col, pieces.B[1].col, col, pieces.B[0].row, pieces.B[1].row, row );
+			pieces.B[index-1].col = col;
+			pieces.B[index-1].row = row;
 		}
 		else
 		{
-			int index = whichBishop(Pieces.b[0].col, Pieces.b[1].col, col, Pieces.b[0].row, Pieces.b[1].row, row );
-			Pieces.b[index].col = col;
-			Pieces.b[index].col = col;
+			int index = whichBishop(pieces.b[0].col, pieces.b[1].col, col, pieces.b[0].row, pieces.b[1].row, row );
+			pieces.b[index-1].col = col;
+			pieces.b[index-1].row = row;
 		}
 	}
 	
@@ -122,15 +138,15 @@ public class PiecesManip
 	{
 		if(pieceType == 'R')
 		{
-			int index = whichBishop(Pieces.R[0].col, Pieces.R[1].col, col, Pieces.R[0].row, Pieces.R[1].row, row );
-			Pieces.R[index].col = col;
-			Pieces.R[index].col = col;
+			int index = whichBishop(pieces.R[0].col, pieces.R[1].col, col, pieces.R[0].row, pieces.R[1].row, row );
+			pieces.R[index-1].col = col;
+			pieces.R[index-1].row = row;
 		}
 		else
 		{
-			int index = whichBishop(Pieces.r[0].col, Pieces.r[1].col, col, Pieces.r[0].row, Pieces.r[1].row, row );
-			Pieces.r[index].col = col;
-			Pieces.r[index].col = col;
+			int index = whichBishop(pieces.r[0].col, pieces.r[1].col, col, pieces.r[0].row, pieces.r[1].row, row );
+			pieces.r[index-1].col = col;
+			pieces.r[index-1].row = row;
 		}
 	}
 
@@ -157,19 +173,4 @@ public class PiecesManip
 			return 2;
 	}
 	
-	public static void main(String args[]) 
-	{
-		PiecesManip pm = new PiecesManip();
-		for(int i = 0; i < 2; i++)
-		{
-			System.out.println(pm.pieces.N[i].name +" "+ pm.pieces.N[i].col +" "+ pm.pieces.N[i].row);
-		}
-		pm.updatePiecePos('N',3,3);
-		System.out.println("After move");
-		for(int i = 0; i < 2; i++)
-		{
-			System.out.println(pm.pieces.N[i].name +" "+ pm.pieces.N[i].col +" "+ pm.pieces.N[i].row);
-		}
-	}
-
 }

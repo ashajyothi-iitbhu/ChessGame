@@ -5,35 +5,13 @@ import java.io.*;
 
 public class ChessBoard {
 	private String[][] board = new String[8][8];
-	
+	Pieces pieces = new Pieces();
 	public ChessBoard()
 	{
-		board[0][0] = "R";
-		board[0][1] = "N";
-		board[0][2] = "B";
-		board[0][3] = "K";
-		board[0][4] = "Q";
-		board[0][5] = "B";
-		board[0][6] = "N";
-		board[0][7] = "R";
-		board[7][0] = "r";
-		board[7][1] = "n";
-		board[7][2] = "b";
-		board[7][3] = "k";
-		board[7][4] = "q";
-		board[7][5] = "b";
-		board[7][6] = "n";
-		board[7][7] = "r";
-		for(int i=2;i<6;i++)
+		for(int i=0;i<8;i++)
 		{
 			for(int j=0; j<8; j++)
-				board[i][j] = "e";
-		}
-		
-		for(int i=0; i<8; i++)
-		{
-			board[1][i] = "P";
-			board[6][i] = "p";
+				board[j][i] = "e";
 		}
 	}
     
@@ -48,8 +26,13 @@ public class ChessBoard {
     
     public String[][] calculateFinalState(ArrayList<String> positionInput)
     {
-    	Piece piece = new Piece();
+    	PiecesManip piece = new PiecesManip(pieces);
     	String[][] boardFinalState = new String[8][8];
+    	for(int i=0;i<8;i++)
+		{
+			for(int j=0; j<8; j++)
+				board[j][i] = "e";
+		}
     	for(int i=0; i<positionInput.size(); i++)
     	{
     		String[] positions;
@@ -72,37 +55,45 @@ public class ChessBoard {
     		{
     			String blackPositionToMove = getEquivalentBoardPosition(positions[0]);
     			String whitePositionToMove = getEquivalentBoardPosition(positions[1]);
-//    			System.out.println(blackPositionToMove + " " + whitePositionToMove);
     			piece.movePiece(blackPositionToMove);
     			piece.movePiece(whitePositionToMove);
+    			initialize();
     			updateBoard();
     		}
     		
     	}
     	return board;
     }
+    
+    public void initialize()
+    {
+    	for(int i=0;i<8;i++)
+		{
+			for(int j=0; j<8; j++)
+				board[j][i] = "e";
+		}
+    }
 
     public void updateBoard()
     {
     	for(int i = 0; i < 8; i++)
     	{
-    		System.out.println("Column number "+Pieces.P[i].col);
-    		board[Pieces.P[i].col][Pieces.P[i].row] = "P";
-    		board[Pieces.p[i].col][Pieces.p[i].row] = "p";  		
+    		board[pieces.P[i].row][pieces.P[i].col] = "P"+i;
+    		board[pieces.p[i].row][pieces.p[i].col] = "p"+i;  		
     	}
     	for(int i=0; i<2; i++)
     	{
-    		board[Pieces.N[i].col][Pieces.N[i].row] = "N";
-    		board[Pieces.n[i].col][Pieces.n[i].row] = "n";
-    		board[Pieces.B[i].col][Pieces.B[i].row] = "B";
-    		board[Pieces.b[i].col][Pieces.b[i].row] = "b";
-    		board[Pieces.R[i].col][Pieces.R[i].row] = "R";
-    		board[Pieces.r[i].col][Pieces.r[i].row] = "r";
+    		board[pieces.N[i].row][pieces.N[i].col] = "N"+i;
+    		board[pieces.n[i].row][pieces.n[i].col] = "n"+i;
+    		board[pieces.B[i].row][pieces.B[i].col] = "B"+i;
+    		board[pieces.b[i].row][pieces.b[i].col] = "b"+i;
+    		board[pieces.R[i].row][pieces.R[i].col] = "R"+i;
+    		board[pieces.r[i].row][pieces.r[i].col] = "r"+i;
     	}
-    	board[Pieces.K.col][Pieces.K.row] = "K";
-		board[Pieces.k.col][Pieces.k.row] = "k";
-		board[Pieces.Q.col][Pieces.Q.row] = "Q";
-		board[Pieces.q.col][Pieces.q.row] = "q";
+    	board[pieces.K.row][pieces.K.col] = "K";
+		board[pieces.k.row][pieces.k.col] = "k";
+		board[pieces.Q.row][pieces.Q.col] = "Q";
+		board[pieces.q.row][pieces.q.col] = "q";
 		
     }
    

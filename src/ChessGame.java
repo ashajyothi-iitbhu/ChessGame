@@ -36,20 +36,18 @@ public class ChessGame {
 	
 	public static void main(String[] args) throws IOException
 	{
-		File file = new File("C:/Users/test/Downloads/Bootcamp/Programs/Akopian.pgn");
+		File file = new File("C:\\Users\\test\\workspace\\ChessGame\\src\\test1.pgn");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> positionsInput = new ArrayList<String> ();
 		positionsInput = parseInput(br);
-//		for(String p : positionsInput)
-//			System.out.println(p);
-		
+		System.out.println(positionsInput);
 		ChessBoard boardObject = new ChessBoard();
 		
 		String[][] boardFinalState = boardObject.calculateFinalState(positionsInput);
 		for(int i=0;i<8;i++)
 		{
 			for(int j=0;j<8;j++)
-				System.out.print(boardFinalState[i][j]);
+				System.out.print(boardFinalState[i][j]+"\t");
 			System.out.println();
 		}	
 	}
