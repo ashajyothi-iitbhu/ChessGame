@@ -21,6 +21,15 @@ public class PiecesManip
 		updatePiecePos(a, a1-1, b-1);
 	}
 	
+	public void removePiece(String pieceToRemove)
+	{
+		String[] pcr = new String[3];
+		pcr = pieceToRemove.split(",");
+		int a = Integer.parseInt(pcr[1]);
+		int b = Integer.parseInt(pcr[2]);
+		
+		
+	}
 	public void updatePiecePos(char pieceType, int col, int row)
 	{
 		int i = findPieceType(pieceType);

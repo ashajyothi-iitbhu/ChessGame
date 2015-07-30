@@ -49,7 +49,13 @@ public class ChessBoard {
     				|| positionInput.get(i).indexOf("#")>=0
     				|| positionInput.get(i).indexOf("-")>=0)
     		{
-    			
+    			if(positions[0].indexOf("X") >= 0)
+    			{
+    				String position = "";
+    				String move = positions[0].replaceAll("X", "");
+    				position += getEquivalentBoardPosition(move);
+    				piece.removePiece(position);
+    			}
     		}
     		else
     		{
@@ -58,7 +64,7 @@ public class ChessBoard {
     			piece.movePiece(blackPositionToMove);
     			piece.movePiece(whitePositionToMove);
     			initialize();
-    			updateBoard();
+    			updateBoard(0);
     		}
     		
     	}
@@ -74,27 +80,34 @@ public class ChessBoard {
 		}
     }
 
-    public void updateBoard()
+    public void updateBoard(int caseFlag)
     {
-    	for(int i = 0; i < 8; i++)
+    	if(caseFlag == 0)
     	{
-    		board[pieces.P[i].row][pieces.P[i].col] = "P"+i;
-    		board[pieces.p[i].row][pieces.p[i].col] = "p"+i;  		
+	    	for(int i = 0; i < 8; i++)
+	    	{
+	    		board[pieces.P[i].row][pieces.P[i].col] = "P"+i;
+	    		board[pieces.p[i].row][pieces.p[i].col] = "p"+i;  		
+	    	}
+	    	for(int i=0; i<2; i++)
+	    	{
+	    		board[pieces.N[i].row][pieces.N[i].col] = "N"+i;
+	    		board[pieces.n[i].row][pieces.n[i].col] = "n"+i;
+	    		board[pieces.B[i].row][pieces.B[i].col] = "B"+i;
+	    		board[pieces.b[i].row][pieces.b[i].col] = "b"+i;
+	    		board[pieces.R[i].row][pieces.R[i].col] = "R"+i;
+	    		board[pieces.r[i].row][pieces.r[i].col] = "r"+i;
+	    	}
+	    	board[pieces.K.row][pieces.K.col] = "K";
+			board[pieces.k.row][pieces.k.col] = "k";
+			board[pieces.Q.row][pieces.Q.col] = "Q";
+			board[pieces.q.row][pieces.q.col] = "q";
     	}
-    	for(int i=0; i<2; i++)
+    	
+    	else
     	{
-    		board[pieces.N[i].row][pieces.N[i].col] = "N"+i;
-    		board[pieces.n[i].row][pieces.n[i].col] = "n"+i;
-    		board[pieces.B[i].row][pieces.B[i].col] = "B"+i;
-    		board[pieces.b[i].row][pieces.b[i].col] = "b"+i;
-    		board[pieces.R[i].row][pieces.R[i].col] = "R"+i;
-    		board[pieces.r[i].row][pieces.r[i].col] = "r"+i;
+    		
     	}
-    	board[pieces.K.row][pieces.K.col] = "K";
-		board[pieces.k.row][pieces.k.col] = "k";
-		board[pieces.Q.row][pieces.Q.col] = "Q";
-		board[pieces.q.row][pieces.q.col] = "q";
-		
     }
    
     public static String getEquivalentBoardPosition(String position)

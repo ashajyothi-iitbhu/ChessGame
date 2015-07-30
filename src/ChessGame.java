@@ -36,7 +36,7 @@ public class ChessGame {
 	
 	public static void main(String[] args) throws IOException
 	{
-		File file = new File("C:\\Users\\test\\workspace\\ChessGame\\src\\test1.pgn");
+		File file = new File("C:/Users/test/Downloads/ChessGame/src/Akopian.pgn");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		ArrayList<String> positionsInput = new ArrayList<String> ();
 		positionsInput = parseInput(br);
